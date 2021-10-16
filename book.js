@@ -1,4 +1,6 @@
-function books(title, author, numpages, readornot) {
+let myLibrary = [];
+
+function book(title, author, numpages, readornot) {
 
     this.title = title
 
@@ -14,6 +16,13 @@ function books(title, author, numpages, readornot) {
     }
 }
 
-const book1 = new books('book', 'me', '10', 'nope');
+function addBook() {
+    //query for a button press new book
+    //add variable input for all the options
+    //store in new variable creating the object and push to array
+    myLibrary.push(book);
+}
+
+const book1 = new book('book', 'me', '10', 'nope');
 
 console.log(book1.info());

@@ -1,0 +1,42 @@
+.container {
+    width: 840px;
+    margin: auto;
+    border: solid black 2px;
+    background-color: darkgrey;
+}
+
+h1 {
+    font-size:3em;
+    text-align: center;
+    color:darkslateblue
+}
+
+th {
+    font-size: 2em;
+    background-color: blueviolet;
+    width: 210px;
+    height: 75px;
+    text-align: center;
+}
+
+td {
+    font-size: 1em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 50px;
+    border: solid black 2px;
+    background-color: cornflowerblue;
+    text-align: center;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    }
+
+button {
+    padding: 10px;
+    width: 200px;
+
+}
+
+
