@@ -1,30 +1,25 @@
 let myLibrary = [];
 
 function createBook(title, author, numpages, readornot) {
-
     this.title = title
-
     this.author = author
-
     this.numpages = numpages
-
     this.readornot = readornot
-
     this.info = function() {
-        //console.log(title + ', ' + author + ', ' + numpages + ', ' + readornot);
         return title + ', ' + author + ', ' + numpages + ', ' + readornot;
     }
 }
 
-const submit = document.getElementById('submit');
+const addbtn = document.getElementById('add-book');
+addbtn.addEventListener('click', (e) => {document.getElementById("myForm").style.display = "block"});
 
-submit.addEventListener('click', addBook);
+const closebtn = document.getElementById('btn-cancel');
+closebtn.addEventListener('click', (e) => {document.getElementById("myForm").style.display = "none"});
 
 const table = document.getElementById('table');
 
-
 function addBook(e) {
-    e.preventDefault();
+    //e.preventDefault();
 
     //get input value
     let title = document.getElementById('title').value;
@@ -37,3 +32,12 @@ function addBook(e) {
     console.log(myLibrary);
 
 }
+
+function displayLibrary() {
+   let text = '';
+  for (i = 0; i <= myLibrary.length; i++) {
+       text += myLibrary[i] + "<br>";
+  }
+   //document.getElementById("table-data").innerHTML = text;
+}
+

@@ -10,21 +10,21 @@
 </head>
 <body>
     <h1>Morris Library</h1>
-<!--
         <div class="btn-container">
             <button type="button" id="add-book">Add a Book to Collection</button>
             <button type="button" id="remove-book">Remove a Book</button>
-        </div> -->
-
-        <div class="container">
-            <h2>Add a Book</h2>
-            <form>
-                <input type="text" id="title" name="title" value="Title">
-                <input type="text" id="author" name="author" value="Author">
-                <input type="text" id="num-pages" name="num-pages" value="# of Pages">
-                <input type="text" id="read-ornot" name="read-ornot" value="Read?">
-                <input type="submit" id="submit" value="Submit">
+        </div>
+        <div class="form-popup" id="myForm">
+            <form action="" class="form-container">
+                <input type="text" placeholder="Title" name="title" required>
+                <input type="text" placeholder="Author" name="title" required>
+                <input type="text" placeholder="# of Pages" name="pages" required>
+                <input type="text" placeholder="Read?" name="author" required>
+                <button type="submit" class="btn">Add</button>
+                <button type="button" class="btn-cancel" id="btn-cancel">Close</button>
             </form>
+        </div>
+        <div class="container">
             <table id="table">
                 <tr>
                     <th>Book Title</th>
@@ -32,7 +32,7 @@
                     <th># of Pages</th>
                     <th>Read or Not?</th>
                 </tr>
-                <tr id="table-data">
+                <tr>
                     <td>title1</td>
                     <td>dude1</td>
                     <td>100 pgs</td>

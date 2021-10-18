@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-image: url("pics/library-1219676.jpg");
     background-repeat: no-repeat;
@@ -9,10 +13,11 @@ body {
     width: 1040px;
     margin: auto;
     border: solid black 2px;
-    background-color: darkgrey;
-    padding-top: 50px;
-    margin-top: 50px;
+    background-color: rgb(77, 74, 74);
+    padding-top: 30px;
+    margin-top: 100px;
     border-radius: 10px;
+    height: 500px;
 }
 
 h1 {
@@ -29,13 +34,13 @@ th {
     height: 75px;
     text-align: center;
     border-radius: 5px;
+    border: solid black 1px;
 }
 
 td {
     font-size: 1em;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     height: 50px;
-    border: solid black 1px;
     background-color: cornflowerblue;
     text-align: center;
     border-radius: 5px;
@@ -58,4 +63,24 @@ button {
 
 #remove-book {
     margin-right: 150px;;
+}
+
+.form-container {
+    width: 200px;
+    margin-left: 150px;
+    border: none;
+    position: absolute;
+}
+
+.form-container input[type=text], .form-container input[type=submit], .form-container input[type=button] {
+    width: 200px;
+    
+}
+
+.form-container input[type=text] {
+    height: 39px;
+}
+
+.form-popup {
+    display: none;
 }
