@@ -10,20 +10,29 @@
 </head>
 <body>
     <h1>Morris Library</h1>
+<!--
         <div class="btn-container">
-            <button id="add-book">Add a Book to Collection</button>
-            <button id="remove-book">Remove a Book</button>
-        </div>
+            <button type="button" id="add-book">Add a Book to Collection</button>
+            <button type="button" id="remove-book">Remove a Book</button>
+        </div> -->
 
         <div class="container">
-            <table>
+            <h2>Add a Book</h2>
+            <form>
+                <input type="text" id="title" name="title" value="Title">
+                <input type="text" id="author" name="author" value="Author">
+                <input type="text" id="num-pages" name="num-pages" value="# of Pages">
+                <input type="text" id="read-ornot" name="read-ornot" value="Read?">
+                <input type="submit" id="submit" value="Submit">
+            </form>
+            <table id="table">
                 <tr>
                     <th>Book Title</th>
                     <th>Author</th>
                     <th># of Pages</th>
                     <th>Read or Not?</th>
                 </tr>
-                <tr>
+                <tr id="table-data">
                     <td>title1</td>
                     <td>dude1</td>
                     <td>100 pgs</td>

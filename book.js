@@ -1,6 +1,6 @@
 let myLibrary = [];
 
-function book(title, author, numpages, readornot) {
+function createBook(title, author, numpages, readornot) {
 
     this.title = title
 
@@ -16,13 +16,24 @@ function book(title, author, numpages, readornot) {
     }
 }
 
-function addBook() {
-    //query for a button press new book
-    //add variable input for all the options
-    //store in new variable creating the object and push to array
-    myLibrary.push(book);
+const submit = document.getElementById('submit');
+
+submit.addEventListener('click', addBook);
+
+const table = document.getElementById('table');
+
+
+function addBook(e) {
+    e.preventDefault();
+
+    //get input value
+    let title = document.getElementById('title').value;
+    let author = document.getElementById('author').value;
+    let numpages = document.getElementById('num-pages').value;
+    let read = document.getElementById('read-ornot').value;
+    const booknew = new createBook(title, author, numpages, read);
+    myLibrary.push(booknew);
+    
+    console.log(myLibrary);
+
 }
-
-const book1 = new book('book', 'me', '10', 'nope');
-
-console.log(book1.info());
