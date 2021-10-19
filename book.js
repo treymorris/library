@@ -13,14 +13,14 @@ function createBook(title, author, numpages, readornot) {
 const addbtn = document.getElementById('add-book');
 addbtn.addEventListener('click', (e) => {document.getElementById("myForm").style.display = "block"});
 
-const closebtn = document.getElementById('btn-cancel');
+const closebtn = document.getElementById('close-btn');
 closebtn.addEventListener('click', (e) => {document.getElementById("myForm").style.display = "none"});
 
-const table = document.getElementById('table');
+const submitbtn = document.getElementById('submit-btn');
+submitbtn.addEventListener('click', addBook);
 
 function addBook(e) {
-    //e.preventDefault();
-
+    e.preventDefault();
     //get input value
     let title = document.getElementById('title').value;
     let author = document.getElementById('author').value;
@@ -28,16 +28,16 @@ function addBook(e) {
     let read = document.getElementById('read-ornot').value;
     const booknew = new createBook(title, author, numpages, read);
     myLibrary.push(booknew);
-    
+    document.getElementById("myForm").style.display = "none"
     console.log(myLibrary);
 
 }
 
-function displayLibrary() {
-   let text = '';
-  for (i = 0; i <= myLibrary.length; i++) {
-       text += myLibrary[i] + "<br>";
-  }
-   //document.getElementById("table-data").innerHTML = text;
-}
+//function displayLibrary() {
+ //  let text = '';
+ // for (i = 0; i <= myLibrary.length; i++) {
+ //      text += myLibrary[i] + "<br>";
+//  }
+ //  document.getElementById("table").innerHTML = text;
+//}
 
