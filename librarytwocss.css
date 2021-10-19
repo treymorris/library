@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("pics/library-1219676.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.container {
+    width: 1040px;
+    margin: auto;
+    /*border: solid black 2px;*/
+    /*background-color: rgb(180, 169, 169);*/
+    padding-top: 30px;
+    margin-top: 50px;
+    border-radius: 10px;
+    /*height: 650px;*/
+    /*opacity: 0.9;*/
+}
+
+h1 {
+    font-size:3.5em;
+    text-align: center;
+    color: red;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+th {
+    font-size: 2em;
+    background-color: rgb(111, 143, 185);
+    width: 260px;
+    height: 75px;
+    text-align: center;
+    border-radius: 5px;
+    border: solid black 1px;
+}
+
+td {
+    font-size: 1em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 50px;
+    background-color: cornflowerblue;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-around;
+    }
+
+button {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+button:hover{
+    opacity: 0.75;
+}
+
+/*#add-book {
+    margin-left: 150px;
+}*/
+
+
+
+.form-container {
+    
+    display: none;
+    width: 200px;
+    /*margin-left: 150px;*/
+    border: none;
+    position: absolute;
+}
+
+.form-container input[type=text], .form-container input[type=submit], .form-container input[type=button] {
+    width: 200px;
+    
+}
+
+.form-container input[type=text] {
+    height: 39px;
+}
+
+.form-popup {
+    /*display: none;*/
+    display: flex;
+    justify-content: space-around;
+}
+
+.bookdiv {
+    background-color: grey;
+    font-size: 25px;
+    margin-top: 20px;
+    text-align: center;
+    width: 300px;
+}
