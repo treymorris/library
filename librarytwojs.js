@@ -30,9 +30,7 @@ function addBook(e) {
 
 function displayLibrary(item) {
     const container = document.querySelector('.container');
-
     const divContainer = document.createElement('div');
-
 
     const titleDiv = document.createElement('div');
     titleDiv.classList.add('bookdiv');
@@ -58,12 +56,7 @@ function displayLibrary(item) {
     removeBtn.classList.add('remove-button');
     divContainer.appendChild(removeBtn);
     removeBtn.textContent = 'Remove Book';
-    removeBtn.addEventListener('click', removeBook);
+    removeBtn.addEventListener('click', (e) => {container.removeChild(divContainer)});
 
     container.appendChild(divContainer);
-}
-
-function removeBook() {
-    
-    
 }

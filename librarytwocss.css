@@ -70,4 +70,5 @@ button:hover {
     text-align: left;
     width: 300px;
     padding: 10px;
+    border: solid 2px black;
 }
