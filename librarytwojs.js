@@ -31,23 +31,39 @@ function addBook(e) {
 function displayLibrary(item) {
     const container = document.querySelector('.container');
 
+    const divContainer = document.createElement('div');
+
+
     const titleDiv = document.createElement('div');
     titleDiv.classList.add('bookdiv');
-    container.appendChild(titleDiv);
+    divContainer.appendChild(titleDiv);
     titleDiv.textContent = 'Title: ' + item.title;
 
     const authorDiv = document.createElement('div');
     authorDiv.classList.add('bookdiv');
-    titleDiv.appendChild(authorDiv);
+    divContainer.appendChild(authorDiv);
     authorDiv.textContent = 'Author: ' + item.author;
 
     const pagesDiv = document.createElement('div');
     pagesDiv.classList.add('bookdiv');
-    authorDiv.appendChild(pagesDiv);
-    pagesDiv.textContent = '# of Pages: ' + item.pages;
+    divContainer.appendChild(pagesDiv);
+    pagesDiv.textContent = '# Pages: ' + item.pages;
 
     const readDiv = document.createElement('div');
     readDiv.classList.add('bookdiv');
-    pagesDiv.appendChild(readDiv);
+    divContainer.appendChild(readDiv);
     readDiv.textContent = 'Read?: ' + item.read;
+
+    const removeBtn = document.createElement('button');
+    removeBtn.classList.add('remove-button');
+    divContainer.appendChild(removeBtn);
+    removeBtn.textContent = 'Remove Book';
+    removeBtn.addEventListener('click', removeBook);
+
+    container.appendChild(divContainer);
+}
+
+function removeBook() {
+    
+    
 }
