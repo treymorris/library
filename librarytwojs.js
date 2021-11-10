@@ -24,7 +24,7 @@ function addBook(e) {
     //e.preventDefault();
     const newBook = new createBook(title, author, pages, read);
     myLibrary.push(newBook);
-    document.getElementById("form").style.display = "none"
+    setTimeout(function(){document.getElementById("form").style.display = "none"}, 5000);
     document.getElementById('form').reset();
     console.log(myLibrary);
     displayLibrary(newBook);
@@ -33,6 +33,7 @@ function addBook(e) {
 function displayLibrary(item) {
     const container = document.querySelector('.container');
     const divContainer = document.createElement('div');
+    container.appendChild(divContainer);
 
     const titleDiv = document.createElement('div');
     titleDiv.classList.add('bookdiv');
@@ -59,6 +60,10 @@ function displayLibrary(item) {
     divContainer.appendChild(removeBtn);
     removeBtn.textContent = 'Remove Book';
     removeBtn.addEventListener('click', (e) => {container.removeChild(divContainer)});
+}
 
-    container.appendChild(divContainer);
+function validate() {
+    const title = document.getElementById('title');
+
+
 }
