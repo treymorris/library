@@ -1,11 +1,12 @@
 const addbtn = document.getElementById('add-book');
-addbtn.addEventListener('click', (e) => {document.getElementById("form").style.display = "block"});
+addbtn.addEventListener('click', (e) => {document.getElementById("form").style.display = "inline-block"});
 
 const closebtn = document.getElementById('close-btn');
 closebtn.addEventListener('click', (e) => {document.getElementById("form").style.display = "none"});
 
 const submitbtn = document.getElementById('submit-btn');
 submitbtn.addEventListener('click', addBook);
+
 
 class createBook {
     constructor(title, author, pages, read) {
@@ -20,10 +21,11 @@ let myLibrary = [];
 let newBook;
 
 function addBook(e) {
-    e.preventDefault();
+    //e.preventDefault();
     const newBook = new createBook(title, author, pages, read);
     myLibrary.push(newBook);
     document.getElementById("form").style.display = "none"
+    document.getElementById('form').reset();
     console.log(myLibrary);
     displayLibrary(newBook);
 }

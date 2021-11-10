@@ -59,6 +59,10 @@ button:hover {
     height: 39px;
 }
 
+.form-container input[type=number] {
+    height: 39px;
+    width: 300px;
+}
 .form-popup {
     display: flex;
     justify-content: space-around;
