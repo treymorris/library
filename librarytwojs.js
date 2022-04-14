@@ -1,14 +1,4 @@
-const addbtn = document.getElementById('add-book');
-addbtn.addEventListener('click', (e) => {document.getElementById("form").style.display = "inline-block"});
-
-const closebtn = document.getElementById('close-btn');
-closebtn.addEventListener('click', (e) => {document.getElementById("form").style.display = "none"});
-
-const submitbtn = document.getElementById('submit-btn');
-submitbtn.addEventListener('click', addBook);
-
-
-class createBook {
+class Book {
     constructor(title, author, pages, read) {
         this.title = form.title.value;
         this.author = form.author.value;
@@ -17,16 +7,26 @@ class createBook {
     }
 }
 
-let myLibrary = [];
-let newBook;
+let bookArray = [];
 
-function addBook(e) {
-    //e.preventDefault();
-    const newBook = new createBook(title, author, pages, read);
-    myLibrary.push(newBook);
+
+const addbtn = document.getElementById('add-book');
+const closebtn = document.getElementById('close-btn');
+const submitbtn = document.getElementById('submit-btn');
+
+
+
+addbtn.addEventListener('click', () => {document.getElementById("form").style.display = "inline-block"});
+closebtn.addEventListener('click', () => {document.getElementById("form").style.display = "none"});
+submitbtn.addEventListener('click', addBook);
+
+
+function addBook() {
+    const newBook = new Book(title, author, pages, read);
+    bookArray.push(newBook);
     setTimeout(function(){document.getElementById("form").style.display = "none"}, 5000);
     document.getElementById('form').reset();
-    console.log(myLibrary);
+    console.log(bookArray);
     displayLibrary(newBook);
 }
 
@@ -59,7 +59,7 @@ function displayLibrary(item) {
     removeBtn.classList.add('remove-button');
     divContainer.appendChild(removeBtn);
     removeBtn.textContent = 'Remove Book';
-    removeBtn.addEventListener('click', (e) => {container.removeChild(divContainer)});
+    removeBtn.addEventListener('click', () => {container.removeChild(divContainer)});
 }
 
 function validate() {

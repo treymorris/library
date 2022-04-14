@@ -15,10 +15,35 @@
         </div>
         <div class="form-popup">
             <form class="form-container" id="form">
-                <input type="text" id="title" placeholder="Title" name="title" required>
-                <input type="text" id="author" placeholder="Author" name="author" required>
-                <input type="number" id="pages" placeholder="# of Pages" name="num-pages" required>
-                <input type="text" id="read" placeholder="Have you read the book?" name="read-ornot" required>
+                <input 
+                    type="text" 
+                    id="title" 
+                    placeholder="Title" 
+                    name="title" 
+                    required
+                />
+                <input 
+                    type="text" 
+                    id="author" 
+                    placeholder="Author" 
+                    name="author" 
+                    required
+                />
+                <input 
+                    type="number" 
+                    id="pages" 
+                    placeholder="# of Pages" 
+                    name="num-pages" 
+                    required
+                />
+                <div class="read-input">
+                    <label class="read-label">Have you read this book?</label>
+                    <input
+                        type="checkbox"
+                        id="read"
+                        name="read-ornot"
+                    />
+                </div>
                 <button type="submit" class="btn" id="submit-btn">Submit</button>
                 <button type="button" class="btn-cancel" id="close-btn">Close</button>
             </form>
