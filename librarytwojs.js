@@ -1,9 +1,14 @@
 class Book {
-    constructor(title, author, pages, read) {
-        this.title = form.title.value;
-        this.author = form.author.value;
-        this.pages = form.pages.value;
-        this.read = form.read.value;
+    constructor(
+        title = 'Unknown',
+        author = 'Unknown',
+        pages = '0',
+        read = false
+    ) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
     }
 }
 
@@ -18,17 +23,23 @@ const submitbtn = document.getElementById('submit-btn');
 
 addbtn.addEventListener('click', () => {document.getElementById("form").style.display = "inline-block"});
 closebtn.addEventListener('click', () => {document.getElementById("form").style.display = "none"});
-submitbtn.addEventListener('click', addBook);
 
 
-function addBook() {
+
+const addBook = (e) => {
+    e.preventDefault()
+    const title = document.getElementById('title').value
+    const author = document.getElementById('author').value
+    const pages = document.getElementById('pages').value
+    const read = document.getElementById('read').checked
     const newBook = new Book(title, author, pages, read);
     bookArray.push(newBook);
     setTimeout(function(){document.getElementById("form").style.display = "none"}, 5000);
     document.getElementById('form').reset();
-    console.log(bookArray);
+    console.log(newBook);
     displayLibrary(newBook);
 }
+submitbtn.addEventListener('click', addBook);
 
 function displayLibrary(item) {
     const container = document.querySelector('.container');
