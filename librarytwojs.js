@@ -42,8 +42,6 @@ function addBook(e)  {
     addOneBook(newBook);
 };
 
-
-
 function displayLibrary() {
 
     bookArray.forEach((book) => {
@@ -90,7 +88,6 @@ function addOneBook(newBook) {
         const pagesDiv = document.createElement('div');
         const readDiv = document.createElement('div');
         const removeBtn = document.createElement('button');
-        
         
         titleDiv.classList.add('bookdiv');
         authorDiv.classList.add('bookdiv');

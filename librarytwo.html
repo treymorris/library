@@ -9,45 +9,43 @@
     <link rel="stylesheet" href="librarytwocss.css">
 </head>
 <body>
-    <div class="hero">
-        <div class="hero-text">
-            <h1>Morris Library</h1>
-            <div class="btn-container">
-                <button type="button" id="add-book">Add a Book to the Collection</button>
-            </div>
+    <div >
+        <h1>Morris Library</h1>
+        <div class="btn-container">
+            <button type="button" id="add-book">Add a Book to the Collection</button>
         </div>
     </div>
-        <div class="form-popup">
-            <form class="form-container" id="form">
-                <input 
-                    type="text" 
-                    id="title" 
-                    placeholder="Title" 
-                    required
+    <div class="form-popup">
+        <form class="form-container" id="form">
+            <input 
+                type="text" 
+                id="title" 
+                placeholder="Title" 
+                required
+            />
+            <input 
+                type="text" 
+                id="author" 
+                placeholder="Author" 
+                required
+            />
+            <input 
+                type="number" 
+                id="pages" 
+                placeholder="# of Pages" 
+                required
+            />
+            <div class="read-input">
+                <label class="read-label">Have you read this book?</label>
+                <input
+                    type="checkbox"
+                    id="read"
                 />
-                <input 
-                    type="text" 
-                    id="author" 
-                    placeholder="Author" 
-                    required
-                />
-                <input 
-                    type="number" 
-                    id="pages" 
-                    placeholder="# of Pages" 
-                    required
-                />
-                <div class="read-input">
-                    <label class="read-label">Have you read this book?</label>
-                    <input
-                        type="checkbox"
-                        id="read"
-                    />
-                </div>
-                <button type="submit" class="btn" id="submit-btn">Submit</button>
-                <button type="button" class="btn-cancel" id="close-btn">Close</button>
-            </form>
-        </div>
-        <div class="container"></div>
+            </div>
+            <button type="submit" class="btn" id="submit-btn">Submit</button>
+            <button type="button" class="btn-cancel" id="close-btn">Close</button>
+        </form>
+    </div>
+    <div class="container"></div>
 </body>
 </html>
