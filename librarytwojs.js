@@ -24,14 +24,11 @@ const addbtn = document.getElementById('add-book');
 const closebtn = document.getElementById('close-btn');
 const submitbtn = document.getElementById('submit-btn');
 
-
-
 addbtn.addEventListener('click', () => {document.getElementById("form").style.display = "inline-block"});
 closebtn.addEventListener('click', () => {document.getElementById("form").style.display = "none"});
+submitbtn.addEventListener('click', addBook);
 
-
-
-const addBook = (e) => {
+function addBook(e)  {
     e.preventDefault()
     const title = document.getElementById('title').value
     const author = document.getElementById('author').value
@@ -39,12 +36,11 @@ const addBook = (e) => {
     const read = document.getElementById('read').checked
     const newBook = new Book(title, author, pages, read);
     bookArray.push(newBook);
-    setTimeout(function(){document.getElementById("form").style.display = "none"}, 5000);
+    setTimeout(function(){document.getElementById("form").style.display = "none"}, 500);
     document.getElementById('form').reset();
     console.log(newBook);
     addOneBook(newBook);
-}
-submitbtn.addEventListener('click', addBook);
+};
 
 
 
@@ -59,7 +55,6 @@ function displayLibrary() {
         const pagesDiv = document.createElement('div');
         const readDiv = document.createElement('div');
         const removeBtn = document.createElement('button');
-        
         
         titleDiv.classList.add('bookdiv');
         authorDiv.classList.add('bookdiv');
@@ -83,11 +78,9 @@ function displayLibrary() {
             readDiv.textContent = 'You have not read this Book.';
         }
         removeBtn.textContent = 'Remove Book';
-        removeBtn.addEventListener('click', () => {container.removeChild(divContainer)});
-        
-    })
-    
-}
+        removeBtn.addEventListener('click', () => { container.removeChild(divContainer) });
+    });
+};
 
 function addOneBook(newBook) {
         const container = document.querySelector('.container');
@@ -122,4 +115,4 @@ function addOneBook(newBook) {
         }
         removeBtn.textContent = 'Remove Book';
         removeBtn.addEventListener('click', () => {container.removeChild(divContainer)});
-}
+};
