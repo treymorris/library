@@ -12,8 +12,13 @@ class Book {
     }
 }
 
-let bookArray = [];
+let bookArray = [
+    { title: 'Test1', author: 'Author1', pages: '25', read: true },
+    { title: 'Test2', author: 'Author2', pages: '25', read: true },
+    { title: 'Test3', author: 'Author3', pages: '25', read: false }
+];
 
+displayLibrary();
 
 const addbtn = document.getElementById('add-book');
 const closebtn = document.getElementById('close-btn');
@@ -37,44 +42,84 @@ const addBook = (e) => {
     setTimeout(function(){document.getElementById("form").style.display = "none"}, 5000);
     document.getElementById('form').reset();
     console.log(newBook);
-    displayLibrary(newBook);
+    addOneBook(newBook);
 }
 submitbtn.addEventListener('click', addBook);
 
-function displayLibrary(item) {
-    const container = document.querySelector('.container');
-    const divContainer = document.createElement('div');
-    container.appendChild(divContainer);
 
-    const titleDiv = document.createElement('div');
-    titleDiv.classList.add('bookdiv');
-    divContainer.appendChild(titleDiv);
-    titleDiv.textContent = 'Title: ' + item.title;
 
-    const authorDiv = document.createElement('div');
-    authorDiv.classList.add('bookdiv');
-    divContainer.appendChild(authorDiv);
-    authorDiv.textContent = 'Author: ' + item.author;
+function displayLibrary() {
 
-    const pagesDiv = document.createElement('div');
-    pagesDiv.classList.add('bookdiv');
-    divContainer.appendChild(pagesDiv);
-    pagesDiv.textContent = '# Pages: ' + item.pages;
+    bookArray.forEach((book) => {
 
-    const readDiv = document.createElement('div');
-    readDiv.classList.add('bookdiv');
-    divContainer.appendChild(readDiv);
-    readDiv.textContent = 'Read?: ' + item.read;
+        const container = document.querySelector('.container');
+        const divContainer = document.createElement('div');
+        const titleDiv = document.createElement('div');
+        const authorDiv = document.createElement('div');
+        const pagesDiv = document.createElement('div');
+        const readDiv = document.createElement('div');
+        const removeBtn = document.createElement('button');
+        
+        
+        titleDiv.classList.add('bookdiv');
+        authorDiv.classList.add('bookdiv');
+        pagesDiv.classList.add('bookdiv');
+        readDiv.classList.add('bookdiv');
+        removeBtn.classList.add('remove-button');
 
-    const removeBtn = document.createElement('button');
-    removeBtn.classList.add('remove-button');
-    divContainer.appendChild(removeBtn);
-    removeBtn.textContent = 'Remove Book';
-    removeBtn.addEventListener('click', () => {container.removeChild(divContainer)});
+        container.appendChild(divContainer);
+        divContainer.appendChild(titleDiv);
+        divContainer.appendChild(authorDiv);
+        divContainer.appendChild(pagesDiv);
+        divContainer.appendChild(readDiv);
+        divContainer.appendChild(removeBtn);
+
+        titleDiv.textContent = 'Title: ' + book.title;
+        authorDiv.textContent = 'Author: ' + book.author;
+        pagesDiv.textContent = 'Pages: ' + book.pages;
+        if (book.read) {
+            readDiv.textContent = 'You have read this Book!';
+        } else {
+            readDiv.textContent = 'You have not read this Book.';
+        }
+        removeBtn.textContent = 'Remove Book';
+        removeBtn.addEventListener('click', () => {container.removeChild(divContainer)});
+        
+    })
+    
 }
 
-function validate() {
-    const title = document.getElementById('title');
+function addOneBook(newBook) {
+        const container = document.querySelector('.container');
+        const divContainer = document.createElement('div');
+        const titleDiv = document.createElement('div');
+        const authorDiv = document.createElement('div');
+        const pagesDiv = document.createElement('div');
+        const readDiv = document.createElement('div');
+        const removeBtn = document.createElement('button');
+        
+        
+        titleDiv.classList.add('bookdiv');
+        authorDiv.classList.add('bookdiv');
+        pagesDiv.classList.add('bookdiv');
+        readDiv.classList.add('bookdiv');
+        removeBtn.classList.add('remove-button');
 
+        container.appendChild(divContainer);
+        divContainer.appendChild(titleDiv);
+        divContainer.appendChild(authorDiv);
+        divContainer.appendChild(pagesDiv);
+        divContainer.appendChild(readDiv);
+        divContainer.appendChild(removeBtn);
 
+        titleDiv.textContent = 'Title: ' + newBook.title;
+        authorDiv.textContent = 'Author: ' + newBook.author;
+        pagesDiv.textContent = 'Pages: ' + newBook.pages;
+        if (newBook.read) {
+            readDiv.textContent = 'You have read this Book!';
+        } else {
+            readDiv.textContent = 'You have not read this Book.';
+        }
+        removeBtn.textContent = 'Remove Book';
+        removeBtn.addEventListener('click', () => {container.removeChild(divContainer)});
 }

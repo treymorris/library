@@ -91,9 +91,16 @@ input {
 
 .bookdiv {
     background-color: grey;
-    font-size: 25px;
+    color: white;
+    font-size: 20px;
     text-align: left;
     width: 300px;
     padding: 10px;
     border: solid 2px black;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.div-container {
+    border: solid 5px black;
 }
